@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+.AuthStyles {
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  background-image: url("./assets/brooke-lark-1Rm9GLHV0UA-unsplash.jpg");
+  display: flex;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.Login-continer {
+  align-items: center;
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  padding-top: 0;
+  box-sizing: border-box;
+  height: fit-content;
+  border-radius: 16px;
+  background-color: #ffffffef;
+}
+.main-title {
+  font-size: 40px;
+  text-shadow: 1px 4px 6px black;
+  color: rgb(255, 255, 255);
+  font-family: "DM sams", sans-serif;
+  font-weight: 800;
+}
+.Form-Style {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.input-divider {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-sizing: border-box;
+}
+.input-divider > label {
+  font-size: 20px;
+  font-family: "DM sams", sans-serif;
+  font-weight: 600;
+}
+.input-divider > input {
+  height: 2rem;
+  border-radius: 5px;
+  border: 1px solid;
+  padding-left: 0.5rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: end;
+}
+.button-divider {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  gap: 1rem;
+  align-items: center;
+}
+.button-divider > input {
+  border-radius: 6px;
+  border: none;
+  
+}
+.login-btn {
+  width: 12rem;
+  height: 2rem;
+  color: white;
+  background-color: rgba(28, 168, 28, 0.836);
+}
+.signup-btn {
+  color: #4b5563;
+  width: 10rem;
+  height: 2rem;
+  background-color: transparent;
+ 
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
