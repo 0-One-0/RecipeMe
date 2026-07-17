@@ -1,15 +1,19 @@
-import { useNavigate } from "react-router";
-export default function LogIn({errorMsg, email, password, setEmail, setPassword, handleLogIn}) {
-  let navigate = useNavigate();
-  const SignUpHandle = () => {
-    navigate("/signup");
-  };
+export default function SignUp({
+  errorMsg,
+  email,
+  password,
+  setEmail,
+  setPassword,
+  handleSignUp,
+  confirmed,
+}) {
   return (
     <>
       <div className="Login-continer">
-        <h2 className="auth-title">Login</h2>
+        <h2 className="auth-title">Sign Up</h2>
         <form action="" className="Form-Style">
           {errorMsg && <p className="error-text">{errorMsg}</p>}
+          {confirmed == true && <p>Email has been sent</p>}
           <div className="input-divider">
             <label htmlFor="email">Email:</label>
             <input
@@ -31,7 +35,7 @@ export default function LogIn({errorMsg, email, password, setEmail, setPassword,
               name="password"
               placeholder="*********"
               value={password}
-               onChange={(e) => {
+              onChange={(e) => {
                 setPassword(e.target.value);
               }}
             />
@@ -39,17 +43,9 @@ export default function LogIn({errorMsg, email, password, setEmail, setPassword,
           <div className="button-divider">
             <input
               type="button"
-              value={"Login"}
-              className="login-btn"
-              onClick={() => {
-                handleLogIn()
-              }}
-            />
-            <input
-              type="button"
               value={"Sign Up"}
-              className="signup-btn"
-              onClick={SignUpHandle}
+              className="signup-btn-sp"
+              onClick={() => handleSignUp()}
             />
           </div>
         </form>

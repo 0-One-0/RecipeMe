@@ -1,19 +1,21 @@
-import { useState } from "react";
-import LogIn from "../components/LogIn";
+import SignUp from "../components/SignUp";
 import { supabase } from "../auth/supabaseClient";
+import { useState } from "react";
 import { useNavigate } from "react-router";
 
-export default function LogInPage() {
+export default function SignUpPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const [confirmed, setCondirmed] = useState(false);
 
   let navigate = useNavigate();
 
-  async function handleLogIn() {
+  async function handleSignUp() {
+    console.log("in here");
     try {
       setErrorMsg("");
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signUp({
         email,
         password,
       });
@@ -22,16 +24,17 @@ export default function LogInPage() {
         setErrorMsg(error.message);
         return;
       }
+      setCondirmed(true);
       
-      navigate("/");
     } catch (err) {
       setErrorMsg("Something went wrong. Please try again.");
     }
   }
   return (
     <>
-      <LogIn
-        handleLogIn={handleLogIn}
+      <SignUp
+        confirmed ={confirmed}
+        handleSignUp={handleSignUp}
         email={email}
         setEmail={setEmail}
         password={password}
