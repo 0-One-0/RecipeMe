@@ -4,6 +4,9 @@ export default function LogIn({errorMsg, email, password, setEmail, setPassword,
   const SignUpHandle = () => {
     navigate("/signup");
   };
+  const RecoveryHandle = () =>{
+    navigate("/recover")
+  }
   return (
     <>
       <div className="Login-continer">
@@ -50,6 +53,12 @@ export default function LogIn({errorMsg, email, password, setEmail, setPassword,
               value={"Sign Up"}
               className="signup-btn"
               onClick={SignUpHandle}
+            />
+             <input
+              type="button"
+              value={"Forgot password?"}
+              className="forgot-btn"
+              onClick={RecoveryHandle}
             />
           </div>
         </form>

@@ -13,6 +13,10 @@ export default function SignUpPage() {
 
   async function handleSignUp() {
     console.log("in here");
+    if(password.length < 6){
+      setErrorMsg("Password must be at least 6 characters");
+      return;
+    }
     try {
       setErrorMsg("");
       const { data, error } = await supabase.auth.signUp({
@@ -25,7 +29,7 @@ export default function SignUpPage() {
         return;
       }
       setCondirmed(true);
-      
+      navigate("/login")
     } catch (err) {
       setErrorMsg("Something went wrong. Please try again.");
     }
