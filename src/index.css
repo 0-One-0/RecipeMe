@@ -55,7 +55,7 @@
   gap: 1rem;
   box-sizing: border-box;
 }
-.auth-title{
+.auth-title {
   text-shadow: 1px 4px 6px black;
   font-size: 30px;
   font-family: "DM sams", sans-serif;
@@ -71,8 +71,100 @@
 }
 .input-divider > input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px rgba(44, 129, 68, 0.199) inset;
+}
+.App-bg {
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #2E211A;
+}
+.layout-nav {
+  display: flex;
+  gap: 1rem;
+  position: fixed;
+  bottom: 2rem;
+  z-index: 1;
+  list-style: none;
+  width: 12rem;
+  height: 2.5rem;
+  border-radius: 12px;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  
+  text-decoration: none;
+  background-color: rgba(173, 173, 173, 0.144);
+}
+.layout-nav > a {
+  text-decoration: none;
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 0.5rem;
+  color: black;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #2e211a0a;
+  backdrop-filter: blur(5px) saturate(180%);
+  -webkit-backdrop-filter: blur(5px) saturate(180%);
+  box-shadow:
+    0 8px 32px #2e211a1c,
+    inset 0 1px 1px rgba(255, 255, 255, 0.897),
+    inset 0 -1px 1px rgb(255, 255, 255);
+}
+  
+  
+
+.Hero-home{
+  box-sizing: border-box;
+  display: flex;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 20px;
+  
+  position: relative;
+  background-color: rgba(128, 128, 128, 0.096);
+}
+.hero-txt{
+  position: absolute;
+  font-size: 2.5rem;
+  width: 13rem;
+  display: flex;
+  font-weight: 800;
+  top: 5rem;
+  text-shadow: 2px 2px 5px black;
+  left: 4rem;
+  color: #F0E6D8;
+  
   
 }
+.hero-img{
+  border-bottom-left-radius:19px ;
+  border-top-left-radius:19px ;
+}
+.SignOut-btn{
+  display: flex;
+  box-sizing: border-box;
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+}
+.acvtive-nav{
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px) saturate(180%);
+  -webkit-backdrop-filter: blur(5px) saturate(180%);
+  box-shadow:
+    0 8px 32px rgba(255, 255, 255, 0.137),
+    inset 0 1px 1px rgba(255, 255, 255, 0.897),
+    inset 0 -1px 1px rgb(255, 255, 255);
+}
+
 .input-divider > input {
   height: 2rem;
   border-radius: 5px;
@@ -92,7 +184,6 @@
 .button-divider > input {
   border-radius: 6px;
   border: none;
-  
 }
 .login-btn {
   backdrop-filter: blur(20px) saturate(180%);
@@ -108,7 +199,7 @@
   height: 2rem;
   background-color: transparent;
 }
-.signup-btn-sp{
+.signup-btn-sp {
   color: #ffffff;
   width: 10rem;
   height: 2rem;
@@ -120,4 +211,5 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: black;
 }

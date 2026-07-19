@@ -9,6 +9,9 @@ import SignUpPage from "./pages/SignUpPage";
 import UpdatePage from "./pages/UpdatePage";
 import RecoverPage from "./pages/RecoverPage";
 import ProtectedRoute from "./Layout/ProtectedRoute";
+import AppLayout from "./Layout/AppLayout";
+import Add from "./components/Add";
+import List from "./components/List";
 
 function App() {
   return (
@@ -21,7 +24,11 @@ function App() {
           <Route path="/update-password" element={<UpdatePage />} />
         </Route>
         <Route element={<ProtectedRoute />}>
-          <Route path="/" element={<HomePage />} />
+          <Route element={<AppLayout />}>
+            <Route path="/" element={<HomePage />}></Route>
+            <Route path="/add" element={<Add />}></Route>
+            <Route path="/list" element={<List/>}></Route>
+          </Route>
         </Route>
       </Routes>
     </>
