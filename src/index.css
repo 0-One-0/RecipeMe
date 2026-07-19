@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 .AuthStyles {
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   box-sizing: border-box;
   background-image: url("./assets/brooke-lark-1Rm9GLHV0UA-unsplash.jpg");
   /* background: linear-gradient(135deg, #2e1b14 0%, #4a2c1f 100%); */
@@ -77,7 +77,7 @@
   box-sizing: border-box;
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100dvh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -118,7 +118,107 @@
     inset 0 -1px 1px rgb(255, 255, 255);
 }
   
+.recipe-card{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(245, 245, 245, 0.281);
+  width: 18rem;
+  justify-content: center;
+  height: 5rem;
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 1rem;
+}
+.recipe-des{
+  background-color: white;
+  box-sizing: border-box;
+  width: 20rem;
+  height: 30rem;  
+  box-sizing: border-box;
+  padding: 0.5rem;
+  overflow-x: scroll;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  line-height: 1.6;
   
+}
+.form-edit-continer{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-sizing: border-box;
+  height: 20rem;
+  width: 20rem;
+}
+.form-edit{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  gap: 1rem;
+  box-sizing: border-box;
+  position: relative;
+  font-size: 16px
+}
+.form-edit > textarea , input, select{
+  font-size: 16px
+}
+.form-edit > textarea:focus-visible {
+  height: 15rem;
+  width: 20rem;
+  left: 0;
+  box-sizing: border-box;
+  position: absolute;
+  
+}
+.list{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+  gap: 1rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 0.5rem;
+  
+  
+}
+.list-contianer{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  background-color: rgba(255, 255, 255, 0.63);
+  width: 20rem;
+  padding: 0.5rem;
+  height: 20rem;
+  box-sizing: border-box;
+  border-radius: 6px;
+  gap: 1rem;
+  
+}
+.full-screen{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: fixed;
+  overflow-x: scroll;
+  width: 100%;
+  height: 100dvh;
+  top:0;
+  left:0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.336);
+}
+.top-recipe{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  box-sizing: border-box;
+}
 
 .Hero-home{
   box-sizing: border-box;
@@ -210,6 +310,10 @@
 body {
   margin: 0;
   padding: 0;
+  min-height: 100dvh;
+  width: 100%;
+  
   box-sizing: border-box;
+  position: relative;
   background-color: black;
 }

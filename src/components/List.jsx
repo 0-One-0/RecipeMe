@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../auth/supabaseClient";
+import Recipe from "./Recipe";
 
 export default function List() {
   const [recipeList, setRecipeList] = useState([]);
@@ -11,26 +12,24 @@ export default function List() {
     Category === ""
       ? recipeList
       : recipeList.filter((recipe) => recipe.Category === Category);
-
-  useEffect(() => {
-    async function fetchRecipes() {
-      try {
-        const { data, error } = await supabase.from("Recipes").select("*");
-        if (error) {
-          setErrorMsg(error);
-          return;
-        }
-        setRecipeList(data);
-      } catch (err) {
-        setErrorMsg("Something went wrong. Please try again.");
+  async function fetchRecipes() {
+    try {
+      const { data, error } = await supabase.from("Recipes").select("*");
+      if (error) {
+        setErrorMsg(error);
         return;
       }
-      finally{
-        setLoading(false);
-      }
+      setRecipeList(data);
+    } catch (err) {
+      setErrorMsg("Something went wrong. Please try again.");
+      return;
+    } finally {
+      setLoading(false);
     }
-    fetchRecipes();
+  }
 
+  useEffect(() => {
+    fetchRecipes();
   }, []);
   return (
     <>
@@ -46,14 +45,23 @@ export default function List() {
         </select>
         <div className="list">
           {loading && <p>Loading...</p>}
-          {!loading && !errorMsg &&  filteredRecipes.map((recipe) => (
-            <div key={recipe.id} className="recipe-card">
-              <h3>{recipe.Title}</h3>
-              <p>{recipe.Category}</p>
-              <p>{recipe.Recipe}</p>
-            </div>
-          ))}
-          {!loading && filteredRecipes.length <= 0 && !errorMsg && <p>Nothing found</p>}
+          {!loading &&
+            !errorMsg &&
+            filteredRecipes.map((recipe) => (
+              <Recipe
+                type={"normal"}
+                title={recipe.Title}
+                recipe={recipe.Recipe}
+                category={recipe.Category}
+                id={recipe.id}
+                key={recipe.id}
+                onUpdate ={fetchRecipes}
+              />
+            ))}
+
+          {!loading && filteredRecipes.length <= 0 && !errorMsg && (
+            <p>Nothing found</p>
+          )}
           {!loading && errorMsg && <p>{errorMsg}</p>}
         </div>
       </div>

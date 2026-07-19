@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import HomeImg from "../assets/gaelle-marcel-GaLWM8dX73U-unsplash.jpg";
 import { supabase } from "../auth/supabaseClient";
+import Recipe from "./Recipe";
 export default function Home() {
   const [recipeList, setRecipeList] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -41,11 +42,7 @@ export default function Home() {
       <div className="Random-continer">
       <button onClick={getRandomRecipe}>random</button>
       {randomRecipe && (
-        <div>
-          <h3>{randomRecipe.Title}</h3>
-          <p>{randomRecipe.Category}</p>
-          <p>{randomRecipe.Recipe}</p>
-        </div>
+       <Recipe type={"random"} title={randomRecipe.Title} recipe={randomRecipe.Recipe} category={randomRecipe.Category}/>
       )}
       </div>
     </>

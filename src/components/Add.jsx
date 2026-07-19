@@ -18,40 +18,41 @@ export default function Add() {
     setErrorMsg("");
     setConfirmed(false);
 
-    try{
-    const { data: userData, error: userError } = await supabase.auth.getUser();
-    const user = userData.user;
+    try {
+      const { data: userData, error: userError } =
+        await supabase.auth.getUser();
+      const user = userData.user;
 
-    if (userError || !user) {
-      setErrorMsg("Your session has expired. Please log in again.");
-      return;
-    }
+      if (userError || !user) {
+        setErrorMsg("Your session has expired. Please log in again.");
+        return;
+      }
 
-    if (Title.trim() === "") {
-      setErrorMsg("Title not added");
-      return;
-    }
-    if (Recipe.trim() === "") {
-      setErrorMsg("Recipe not added");
-      return;
-    }
-    if (Category == "") {
-      setErrorMsg("Category not added");
-      return;
-    }
+      if (Title.trim() === "") {
+        setErrorMsg("Title not added");
+        return;
+      }
+      if (Recipe.trim() === "") {
+        setErrorMsg("Recipe not added");
+        return;
+      }
+      if (Category == "") {
+        setErrorMsg("Category not added");
+        return;
+      }
 
-    const { data: insertData, error: insertError } = await supabase
-      .from("Recipes")
-      .insert({ Title, Recipe, Category, user_id: user.id });
+      const { data: insertData, error: insertError } = await supabase
+        .from("Recipes")
+        .insert({ Title, Recipe, Category, user_id: user.id });
 
-    if (insertError) {
-      setErrorMsg(insertError.message);
-      return;
+      if (insertError) {
+        setErrorMsg(insertError.message);
+        return;
+      }
+      setConfirmed(true);
+    } catch (err) {
+      setErrorMsg("Something went wrong. Please try again.");
     }
-    setConfirmed(true);
-  }catch(err){
-    setErrorMsg("Something went wrong. Please try again.")
-  }
   }
   return (
     <>
@@ -65,8 +66,7 @@ export default function Add() {
             onChange={(e) => setTitle(e.target.value)}
           />
           <label htmlFor="Recipe">Recipe</label>
-          <input
-            type="text"
+          <textarea
             name="Recipe"
             value={Recipe}
             onChange={(e) => setRecipe(e.target.value)}

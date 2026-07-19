@@ -24,6 +24,13 @@ export default function ProtectedRoute() {
 
     checkUser();
   }, []);
+  useEffect(() => {
+      document.body.style.backgroundColor = "#2E211A";
+  
+      return () => {
+        document.body.style.backgroundColor = "";
+      };
+    }, []);
 
   if (loading) return <p>Loading...</p>;
 
