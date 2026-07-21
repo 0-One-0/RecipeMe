@@ -57,9 +57,10 @@ export default function Add() {
   return (
     <>
       <div className="add-continer">
-        <form action="">
+        <form className="add-form" action="">
           <label htmlFor="Title">Title</label>
           <input
+          className="add-title-input"
             type="text"
             name="Title"
             value={Title}
@@ -73,7 +74,7 @@ export default function Add() {
           />
           <select
             name=""
-            id=""
+            id="select-cat-add"
             value={Category}
             onChange={(e) => {
               setCategory(e.target.value);
@@ -87,10 +88,15 @@ export default function Add() {
             <option value="Meat">Meat</option>
           </select>
 
-          <input type="button" value={"Add Recipe"} onClick={handleAddRecipe} />
+          <input className="add-btn" type="button" value={"Add Recipe"} onClick={handleAddRecipe} />
         </form>
-        {errorMsg && <p>{errorMsg}</p>}
-        {confirmed == true && <p>Recipe has been added.</p>}
+        {errorMsg && <div className="pop-up-conf">{errorMsg}<button onClick={()=> setErrorMsg("")}>Continue</button></div>}
+        {confirmed == true && <div className="pop-up-conf">Recipe has been added. <button onClick={()=> {
+          setConfirmed("")
+          setTitle("");
+          setCategory("");
+          setRecipe("");
+          }}>Continue</button></div>}
       </div>
     </>
   );

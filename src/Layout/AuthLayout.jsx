@@ -9,7 +9,7 @@ export default function AuthLayout() {
         <Outlet />
       </main>
 
-      <footer>© my app</footer>
+      
     </div>
   );
 }

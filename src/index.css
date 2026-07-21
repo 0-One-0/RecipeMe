@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 .AuthStyles {
   width: 100%;
   height: 100dvh;
@@ -81,68 +82,111 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #2E211A;
+  background-color: #2e211a;
 }
 .layout-nav {
   display: flex;
-  gap: 1rem;
+  
   position: fixed;
   bottom: 2rem;
   z-index: 1;
   list-style: none;
-  width: 12rem;
+  width: 20rem;
   height: 2.5rem;
   border-radius: 12px;
   box-sizing: border-box;
-  padding: 0.5rem;
   align-items: center;
   justify-content: center;
   
   text-decoration: none;
-  background-color: rgba(173, 173, 173, 0.144);
+  background-color: rgba(241, 238, 238, 0.144);
 }
-.layout-nav > a {
+.hightlight-continer > a {
   text-decoration: none;
   box-sizing: border-box;
   border-radius: 20px;
+  display: flex;
+  align-items: center;
+  width: 6rem;
+  justify-content: center;
   padding: 0.5rem;
   color: black;
-
+  position: relative;
+  z-index: 1;
+}
+.forgot-btn{
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+  color: white;
+}
+.hightlight-continer{
+  display: flex;
+  box-sizing: border-box;
+  
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+}
+.nav-highlight {
+  position: absolute;
+  width: 3rem;
+  height: 2rem;
+  border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   background: #2e211a0a;
+  align-self: center;
+  
+  
+  left: 0;
   backdrop-filter: blur(5px) saturate(180%);
   -webkit-backdrop-filter: blur(5px) saturate(180%);
   box-shadow:
     0 8px 32px #2e211a1c,
     inset 0 1px 1px rgba(255, 255, 255, 0.897),
     inset 0 -1px 1px rgb(255, 255, 255);
+  z-index: 0;
 }
-  
-.recipe-card{
+
+.recipe-card {
   display: flex;
   flex-direction: column;
   background-color: rgba(245, 245, 245, 0.281);
-  width: 18rem;
+  width: 20rem;
   justify-content: center;
   height: 5rem;
   box-sizing: border-box;
   border-radius: 16px;
-  padding: 1rem;
+  padding: 1rem 0.5rem;
 }
-.recipe-des{
+.btn-continer-list > button {
+  background-color: transparent;
+  color: black;
+  display: flex;
+  border: none;
+}
+.btn-continer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+.recipe-des {
   background-color: white;
   box-sizing: border-box;
   width: 20rem;
-  height: 30rem;  
+  height: 30rem;
   box-sizing: border-box;
   padding: 0.5rem;
   overflow-x: scroll;
   border-radius: 6px;
   white-space: pre-wrap;
   line-height: 1.6;
-  
 }
-.form-edit-continer{
+.form-edit-continer {
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -150,7 +194,7 @@
   height: 20rem;
   width: 20rem;
 }
-.form-edit{
+.form-edit {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -159,10 +203,12 @@
   gap: 1rem;
   box-sizing: border-box;
   position: relative;
-  font-size: 16px
+  font-size: 16px;
 }
-.form-edit > textarea , input, select{
-  font-size: 16px
+.form-edit > textarea,
+input,
+select {
+  font-size: 16px;
 }
 .form-edit > textarea:focus-visible {
   height: 15rem;
@@ -170,34 +216,36 @@
   left: 0;
   box-sizing: border-box;
   position: absolute;
-  
 }
-.list{
+.list {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   align-items: center;
+  width: 100%;
   gap: 1rem;
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 0.5rem;
-  
-  
 }
-.list-contianer{
+.list-contianer {
   display: flex;
   flex-direction: column;
   align-items: end;
   background-color: rgba(255, 255, 255, 0.63);
-  width: 20rem;
+  width: 22rem;
   padding: 0.5rem;
   height: 20rem;
   box-sizing: border-box;
   border-radius: 6px;
   gap: 1rem;
-  
 }
-.full-screen{
+.list-contianer > select {
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: none;
+}
+.full-screen {
   align-items: center;
   justify-content: center;
   display: flex;
@@ -207,30 +255,145 @@
   overflow-x: scroll;
   width: 100%;
   height: 100dvh;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.336);
 }
-.top-recipe{
+.top-recipe {
   display: flex;
   align-items: center;
   justify-content: start;
   gap: 1rem;
   box-sizing: border-box;
 }
+.top-recipe > p {
+  margin-left: auto;
+}
+.top-recipe > h3 {
+  width: 14rem;
+}
+.Home-continer {
+  display: flex;
+  width: 100%;
+  height: 100dvh;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  /* margin-bottom: 5rem; */
+}
+.add-continer {
+  display: flex;
+  position: relative;
+}
+.add-form {
+  background-color: rgba(255, 255, 255, 0.356);
+  box-sizing: border-box;
+  padding: 2rem;
+  border-radius: 16px;
+  min-width: 20rem;
+  min-height: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: White;
+  font-size: 25px;
+}
+.add-form > textarea {
+  height: 15rem;
+  border-radius: 7px;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  max-width: 18.5rem;
+  font-size: 16px;
+}
+.Random-continer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  height: 10rem;
+  color: black;
+}
+.rand-btn:hover {
+  box-shadow:
+    1px 2px 4px rgba(245, 245, 245, 0.459),
+    -1px -2px 4px rgba(245, 245, 245, 0.459);
+}
+.rand-btn {
+  display: flex;
+  box-sizing: border-box;
+  padding: 1rem;
+  width: 10rem;
+  border-radius: 16px;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+.add-title-input {
+  width: 15rem;
+  border-radius: 6px;
+  border: none;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+#select-cat-add {
+  display: flex;
+  justify-content: center;
+  width: 11rem;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  border-radius: 6px;
+  align-self: end;
+}
 
-.Hero-home{
+.add-btn {
+  width: 12rem;
+  align-self: center;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: none;
+  height: 2rem;
+  color: black;
+}
+.pop-up-conf {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 6px;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  width: 90%;
+  height: 10rem;
+  background-color: rgb(121, 82, 82);
+  font-size: 20px;
+  color: White;
+}
+.pop-up-conf > button {
+  box-sizing: border-box;
+  padding: 0.5rem;
+  width: 7rem;
+  font-size: 16px;
+}
+.Hero-home {
   box-sizing: border-box;
   display: flex;
   width: 20rem;
   height: 20rem;
   border-radius: 20px;
-  
+
   position: relative;
   background-color: rgba(128, 128, 128, 0.096);
 }
-.hero-txt{
+.hero-txt {
   position: absolute;
   font-size: 2.5rem;
   width: 13rem;
@@ -239,31 +402,29 @@
   top: 5rem;
   text-shadow: 2px 2px 5px black;
   left: 4rem;
-  color: #F0E6D8;
-  
-  
+  color: #f0e6d8;
 }
-.hero-img{
-  border-bottom-left-radius:19px ;
-  border-top-left-radius:19px ;
+.hero-img {
+  border-bottom-left-radius: 19px;
+  border-top-left-radius: 19px;
 }
-.SignOut-btn{
+.SignOut-btn {
   display: flex;
   box-sizing: border-box;
   position: fixed;
+  
   right: 2rem;
-  top: 2rem;
+  width: 3rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  top: 1rem;
+  color: black;
+  z-index: 1;
 }
-.acvtive-nav{
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px) saturate(180%);
-  -webkit-backdrop-filter: blur(5px) saturate(180%);
-  box-shadow:
-    0 8px 32px rgba(255, 255, 255, 0.137),
-    inset 0 1px 1px rgba(255, 255, 255, 0.897),
-    inset 0 -1px 1px rgb(255, 255, 255);
-}
+
 
 .input-divider > input {
   height: 2rem;
@@ -297,7 +458,9 @@
   color: #181717;
   width: 10rem;
   height: 2rem;
+  text-decoration: underline;
   background-color: transparent;
+  color: white;
 }
 .signup-btn-sp {
   color: #ffffff;
@@ -312,8 +475,11 @@ body {
   padding: 0;
   min-height: 100dvh;
   width: 100%;
-  
+  /* font-family: "Oswald", sans-serif; */
   box-sizing: border-box;
   position: relative;
   background-color: black;
+}
+* {
+  font-family: "Oswald", sans-serif;
 }
