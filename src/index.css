@@ -76,6 +76,8 @@
 .App-bg {
   display: flex;
   box-sizing: border-box;
+  padding-top: 2rem;
+  padding-bottom: 10rem;
   position: relative;
   width: 100%;
   min-height: 100dvh;
